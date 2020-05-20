@@ -1,18 +1,18 @@
 // Write your Character component here
 import React, { Component } from 'react';
 import './App.css';
-import CharCard from './components/CharCard';
+import CCard from './components/CCard';
 
-class App extends Component {
-  constructor() {
+// class App extends Component {
+//   constructor() {
+function Character () {   
     super();
     this.state = {
       rickandmortyChars: []
-    };
-  }
+    }
 
   componentDidMount() {
-    this.getCharacters('https://rickandmortyapi.com/character/');
+    this.getCharacters('https://rickandmortyapi.com/character/')
   }
 
   getCharacters = URL => {
@@ -29,14 +29,14 @@ class App extends Component {
       });
   };
 
-  render() {
+      // render() {
     return (
       <div className="App">
         <h1 className="Header">Rick and Marty</h1>
             <CCard rickandmortyChars = {this.state.rickandmorty} />
       </div>
     );
-  }
-}
+    //   }
+};
 
-export default App;
+export default Character;

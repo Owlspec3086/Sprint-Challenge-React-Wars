@@ -3,6 +3,7 @@ import './App.css';
 import axios from 'axios';
 import CCard from './components/CCard';
 import { Container, Row } from 'reactstrap';
+import Search from './components/Search';
 
 const App = () => {
   // Try to think through what state you'll need for this app before starting. Then build out
@@ -32,20 +33,25 @@ const App = () => {
       <Container>
         <Row>
           {character.map((character, index) => {
-            //Where my character card will go
+           
+           //Where my character card will go
             return (
               <CCard
                 key={index}
-                name={character.name}
-                gender={character.gender}
-                location={character.location}
-                episode={character.episode}
-                image={character.image}
+                //taking the character operation and speading all the values using the spred operator...
+                {...character}
+                //I will not need these below because I used spread operator
+                // name={character.name}
+                // gender={character.gender}
+                // location={character.location}
+                // episode={character.episode}
+                // image={character.image}
               />
             );
           })}
         </Row>
       </Container>
+      <Search />
     </div>
   );
 };
